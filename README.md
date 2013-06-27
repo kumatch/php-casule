@@ -29,11 +29,11 @@ Usage
 use Kumatch\Casule\Casule;
 
 $attributes = array("foo" => 123, "bar" => "baz");
+$salt = 'saltstring';
 
-$casule = new Casule();
+$casule = new Casule($salt);
 $token = $casule->create($attributes);   // 'yBJwijCcdwrT0hXbeSIYvcWgP7U='
 
-$salt = 'saltstring';
 $algo = 'sha512';
 $casule2 = new Casule($salt, $algo);
 $token2 = $casule2->create($attributes);  // 'MoxMmk+ACDlHH/PaRQhgCZHjtrolbOpb5GvpbYHzPMZKwDXelj5x3BfyEMkCsXaPwVx59tlHPTqo1E305NkTDA=='
